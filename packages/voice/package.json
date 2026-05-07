@@ -1,0 +1,35 @@
+{
+  "name": "@cis/voice",
+  "version": "0.1.0-alpha.0",
+  "description": "Brand voice abstraction + audit. Single source of truth for voice config in a CIS instance.",
+  "license": "MIT",
+  "author": "Frank Riemer <https://frankx.ai>",
+  "homepage": "https://github.com/frankxai/creator-intelligence-system/tree/main/packages/voice",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frankxai/creator-intelligence-system.git",
+    "directory": "packages/voice"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

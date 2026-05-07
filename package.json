@@ -1,0 +1,44 @@
+{
+  "name": "creator-intelligence-system",
+  "version": "0.1.0-alpha.0",
+  "private": true,
+  "description": "Sovereign content substrate for AI-first creators. Capture, Strategy, Production, Distribution, Learning.",
+  "license": "MIT",
+  "author": "Frank Riemer <https://frankx.ai>",
+  "homepage": "https://github.com/frankxai/creator-intelligence-system",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frankxai/creator-intelligence-system.git"
+  },
+  "bugs": "https://github.com/frankxai/creator-intelligence-system/issues",
+  "keywords": [
+    "creator-economy",
+    "content-intelligence",
+    "agent-orchestration",
+    "attestation",
+    "provenance",
+    "ai-content",
+    "mcp",
+    "claude",
+    "vercel"
+  ],
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "packageManager": "pnpm@10.0.0",
+  "workspaces": [
+    "packages/*",
+    "packages/adapters/*"
+  ],
+  "scripts": {
+    "build": "pnpm -r --filter \"./packages/**\" build",
+    "test": "pnpm -r --filter \"./packages/**\" test",
+    "lint": "pnpm -r --filter \"./packages/**\" lint",
+    "typecheck": "pnpm -r --filter \"./packages/**\" typecheck",
+    "clean": "pnpm -r --filter \"./packages/**\" clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
