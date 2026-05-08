@@ -51,9 +51,9 @@ Read [`ATTESTATION.md`](./ATTESTATION.md) for the transparency moat.
 
 CIS is distributed in four modes. Pick the one that fits your stack.
 
-### Mode 1 — Vercel template (web-first creators)
+### Mode 1 — Vercel template (gallery + distributor)
 
-The flagship experience. Deploy [GenCreator Studio](https://github.com/frankxai/GenCreator-Studio) — a Next.js + Tailwind template that uses `@cis/core` as its brain.
+Deploy [GenCreator Studio](https://github.com/frankxai/GenCreator-Studio) — a Next.js + Tailwind template that renders your public studio, serves attestation endpoints, and distributes finished artifacts. It does not need to run the authoring model itself.
 
 ```bash
 gh repo create my-studio --template frankxai/GenCreator-Studio --public
@@ -66,7 +66,7 @@ One-click deploy: see [GenCreator-Studio/DEPLOY.md](https://github.com/frankxai/
 
 ### Mode 2 — Claude Code plugin (terminal-first creators)
 
-Drop the starter pack into your Claude Code project. Skills, commands, and agents become available as `/cis-*`.
+Drop the starter pack into your Claude Code project. Skills, commands, and agents become available as `/cis-*`, using the creator's existing Claude Code subscription in their own workspace.
 
 ```bash
 npx skills add frankxai/creator-intelligence-system/starter-packs/claude-code -g
@@ -76,13 +76,13 @@ See [`starter-packs/claude-code/`](./starter-packs/claude-code/) for the bundle.
 
 ### Mode 3 — Claude Project (chat-first creators)
 
-Drop the markdown bundle into your Claude Project knowledge base. Paste the system prompt into Project Instructions.
+Drop the markdown bundle into your Claude Project knowledge base. Paste the system prompt into Project Instructions. Authoring stays inside the creator's Claude subscription.
 
 See [`starter-packs/claude-project/INSTRUCTIONS.md`](./starter-packs/claude-project/INSTRUCTIONS.md).
 
 ### Mode 4 — ChatGPT Custom GPT
 
-Drop the bundle into your Custom GPT knowledge files. Paste the system prompt into the Instructions field. Wire the OpenAPI spec for actions if you want web fetches.
+Drop the bundle into your Custom GPT knowledge files. Paste the system prompt into the Instructions field. Wire the OpenAPI spec for actions if you want the GPT to call a deployed CIS instance.
 
 See [`starter-packs/chatgpt-project/INSTRUCTIONS.md`](./starter-packs/chatgpt-project/INSTRUCTIONS.md).
 
@@ -134,7 +134,8 @@ The core principle: **own the moat, rent the commodity.** Voice config, attestat
 - **Not a CMS.** Use Notion, Sanity, or your filesystem as the storage layer if you want. CIS is the brain, not the database.
 - **Not opinionated about distribution.** Bluesky, LinkedIn, Beehiiv, Farcaster Frames, your own RSS — all adapters. Pick what fits.
 - **Not a replacement for Buffer/Hootsuite.** Those are scheduling UIs. CIS is the agent-orchestrated production layer that decides what to schedule.
-- **Not free of API costs.** Server-deployed CIS instances need their own Anthropic / OpenAI / Vercel AI Gateway keys. Budget API spend separately. Claude Pro/Max subscriptions cannot bill server-side calls (per Anthropic April 2026 policy).
+- **Not dependent on API keys by default.** The sovereign path is authoring inside the creator's existing tools: Claude Code, Claude Projects, ChatGPT Projects/GPTs, Cursor, or another agent workspace. Hosted automation adapters can still use Anthropic, OpenAI, or Vercel AI Gateway keys, but that is an opt-in deployment mode.
+- **Not confused about the Vercel AI CLI.** [`vercel-labs/ai-cli`](https://github.com/vercel-labs/ai-cli) exists and is useful for terminal-native generation via Vercel AI Gateway or provider keys. It is a convenience adapter, not the core authoring engine for subscription-first CIS.
 
 ---
 

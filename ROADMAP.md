@@ -22,8 +22,8 @@ The foundation commit.
 The first proof: capture → publish via the system, on the open repo.
 
 - [ ] All MV1 work runs against this repo (creator-intelligence-system) as the substrate
-- [ ] [GenCreator-Studio](https://github.com/frankxai/GenCreator-Studio) deploys to a Vercel preview
-- [ ] One short captured + drafted + published to Bluesky via `@cis/distribute-bluesky`
+- [ ] [GenCreator-Studio](https://github.com/frankxai/GenCreator-Studio) deploys to a Vercel preview as gallery, distributor, and attestation endpoint
+- [ ] One short authored in a creator-owned agent workspace, imported as a CIP bundle, and published to Bluesky via `@cis/distribute-bluesky`
 - [ ] First Attestation rendered in the published post
 - [ ] CIP v0.1 spec frozen for the week
 
@@ -43,7 +43,7 @@ The substrate is real. The amplifier is live.
 - [ ] CIP v0.1.0 published as `@cis/core@0.1.0` to npm
 - [ ] MCP server published, registered with Anthropic + OpenAI MCP registries
 - [ ] Starter packs shipped: claude-code, claude-project, chatgpt-project
-- [ ] First non-Frank creator boots GenCreator-Studio and ships content
+- [ ] First non-Frank creator boots a starter pack, ships through GenCreator-Studio, and does not need a server-side LLM key unless they opt into hosted automation
 
 ---
 

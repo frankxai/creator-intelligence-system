@@ -10,7 +10,8 @@
 2. **Defaults are open.** Every layer ships a default open-source adapter. Swap any of them without touching the rest.
 3. **Substrate is sacred.** L1 is owned by the creator. We never call home, never ingest your palace into a hosted service.
 4. **Attestation is mandatory.** Every artifact crossing a layer boundary carries provenance. No anonymous outputs.
-5. **Composition over inheritance.** Adapters compose. The orchestrator is dumb on purpose; it reads, dispatches, attests.
+5. **Subscription-first authoring.** The default authoring engine is the creator's own agent workspace: Claude Code, Claude Project, ChatGPT Project/GPT, Cursor, or another subscription tool they already control.
+6. **Composition over inheritance.** Adapters compose. The orchestrator is dumb on purpose; it reads, dispatches, attests.
 
 ---
 
@@ -118,9 +119,10 @@ export interface StrategyAdapter {
 
 **Concrete tech (defaults):**
 
-- **Orchestration:** Claude Agent SDK (`@anthropic-ai/claude-agent-sdk`) for autonomous loops; raw Anthropic SDK (`@anthropic-ai/sdk`) for single-turn API calls.
-- **Model abstraction:** Vercel AI SDK (`ai` v4.x) — `generateText`, `generateImage`, `streamText`, `generateObject`. Provider-agnostic.
-- **Image:** Vercel AI Gateway → `fal-ai/flux` or `google/imagen-3` via the AI SDK. Replaces hand-rolled Nano Banana glue. Preserves `mimeType` honesty (per [feedback memo](https://github.com/frankxai/FrankX/blob/main/CLAUDE.md)).
+- **Primary authoring:** Claude Code, Claude Project, ChatGPT Project/GPT, Cursor, or another creator-owned agent workspace. This path uses the creator's existing subscription and writes CIP artifacts back to the substrate.
+- **Hosted automation adapters:** Claude Agent SDK, raw Anthropic SDK, OpenAI SDK, or Vercel AI SDK for creators who explicitly want server-side automation and bring provider/API Gateway keys.
+- **Terminal generation:** [`vercel-labs/ai-cli`](https://github.com/vercel-labs/ai-cli) for one-off text/image/video generation via Vercel AI Gateway or provider keys. Useful adapter, not a required runtime.
+- **Image:** AI Gateway/provider adapters, or creator-local image tools, with honest MIME/type metadata preserved in CIP attestations.
 - **Video:** Remotion (peer dependency only — users install) for React-rendered video. HeyGen Hyperframes (Apache 2.0) for HTML-rendered agent-authored video.
 - **Music:** Suno API (when public) or `suno-prompt-architect` skill for manual.
 - **Distribution mini-apps:** Farcaster Frames v2 via `@farcaster/frame-sdk` (MIT).
@@ -146,7 +148,7 @@ export interface ProductionStep {
 }
 ```
 
-**Cost discipline:** every `produce()` call must report token counts. The orchestrator enforces per-brief caps. UI shows real-time cost meter.
+**Cost discipline:** every hosted `produce()` call must report token counts. Subscription-workspace production records the tool and reviewer instead of pretending to know internal provider cost. The orchestrator enforces per-brief caps only for API-keyed adapters.
 
 ---
 
@@ -226,7 +228,7 @@ const conductor = new Conductor({
 
 const capture = await conductor.capture({ source: 'voice', audio: blob })
 const brief = await conductor.brief(capture, { format: 'short-script', channel: 'bluesky' })
-const bundle = await conductor.produce(brief)
+const bundle = await conductor.importBundle(await creatorAgent.produce(brief))
 const publication = await conductor.distribute(bundle, ['bluesky', 'linkedin'])
 await conductor.attest(publication) // enforced — cannot publish without
 ```
@@ -246,7 +248,7 @@ CIS ships in four distribution modes. The same substrate; different surfaces.
 | 3 | Chat-first creators | Claude Project | `starter-packs/claude-project/` |
 | 4 | OpenAI-first creators | Custom GPT | `starter-packs/chatgpt-project/` |
 
-The protocol is the same. The interface adapts to where the creator already lives.
+The protocol is the same. The interface adapts to where the creator already lives. The Vercel template is the gallery, distributor, verifier, and optional automation host; the creator's own agent tool is the default authoring engine.
 
 ---
 
