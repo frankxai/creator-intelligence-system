@@ -1,7 +1,17 @@
 # Creator Intelligence System (CIS)
 
+<p align="center">
+  <img src=".github/hero.svg" alt="Creator Intelligence System: six-layer sovereign content substrate for AI-first creators" width="100%">
+</p>
+
 > **The sovereign content substrate for AI-first creators.**
 > Open-source, MIT, bootable. Sibling to [Starlight Intelligence System (SIS)](https://github.com/frankxai/Starlight-Intelligence-System), [Investment Intelligence System (IIS)](https://github.com/frankxai/iis), and [Library OS](https://github.com/frankxai/library-os).
+
+[![License: MIT](https://img.shields.io/badge/license-MIT-2563eb)](LICENSE)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D22-0f766e)](package.json)
+[![pnpm](https://img.shields.io/badge/pnpm-%3E%3D10-f59e0b)](package.json)
+[![Protocol](https://img.shields.io/badge/protocol-CIP%20v0.1-7c3aed)](SPEC.md)
+[![Contributions](https://img.shields.io/badge/contributions-RFCs%20welcome-0891b2)](CONTRIBUTING.md)
 
 ---
 
