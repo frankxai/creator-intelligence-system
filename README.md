@@ -151,11 +151,16 @@ The core principle: **own the moat, rent the commodity.** Voice config, attestat
 
 ## Status
 
-**v0.1.0-alpha** · 2026-05-07 · pre-release
+**v0.1.0-alpha.0 candidate** · source boundary audited 2026-08-10
 
-This is the foundation commit. The protocol is drafted; the types are written; the adapters are scaffolded. Working code lands across MV1 (this week), MV2 (May), MV3 (June). See [ROADMAP.md](./ROADMAP.md).
+The protocol draft, core types, voice workspace, and starter packs exist at the
+four-commit boundary `8e9ad45`. No Git tag or GitHub release has been published,
+and no CIS package exists on npm. The packages remain private while the alpha is
+validated.
 
-Bookmark the repo. Watch for the v0.1.0 tag.
+Read the [changelog](./CHANGELOG.md), [draft candidate notes](./docs/releases/v0.1.0-alpha.0.md),
+and [release process](./RELEASING.md) for the exact evidence and approval gates.
+The roadmap describes intended work, not shipped functionality.
 
 ---
 

@@ -166,6 +166,15 @@ If you build with CIS in 2026, you are early. Early gets the moat.
 - **v1.0** — RFC-frozen schema, formal cryptographic spec, multi-signature attestations.
 - **v1.x** — federated cross-creator attestation pools, web3-anchored timestamps (optional, opt-in).
 
+## Repository release status — 2026-08-10
+
+This document specifies the intended CIS attestation model. It is not evidence
+that the repository, protocol, verifier, or any npm package has been published.
+At this audit the source is a `v0.1.0-alpha.0` candidate at
+`8e9ad45c33ad6ffb056a8b9ab465d79adf83d284`; no corresponding semantic tag,
+GitHub release, or npm package exists. See `CHANGELOG.md`, `RELEASING.md`, and
+`docs/releases/release-ledger.json` for the governed release truth.
+
 ---
 
 > *Provenance is the only honest answer to the trust crisis. Build for it now.*

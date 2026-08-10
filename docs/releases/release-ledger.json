@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "repository": "frankxai/creator-intelligence-system",
+  "defaultBranch": "main",
+  "source": {
+    "auditedAt": "2026-08-10",
+    "auditedHead": "8e9ad45c33ad6ffb056a8b9ab465d79adf83d284",
+    "historyStart": "2026-05-07",
+    "historyEnd": "2026-07-14",
+    "commitCount": 4,
+    "semanticTags": [],
+    "githubReleaseCount": 0
+  },
+  "release": {
+    "version": "0.1.0-alpha.0",
+    "tag": "v0.1.0-alpha.0",
+    "status": "draft",
+    "prerelease": true,
+    "published": false,
+    "targetSha": "8e9ad45c33ad6ffb056a8b9ab465d79adf83d284",
+    "targetCommitCount": 4,
+    "changelogSection": "0.1.0-alpha.0 - Candidate (unpublished)",
+    "notesPath": "docs/releases/v0.1.0-alpha.0.md",
+    "boundaryPolicy": "Preserve the four-commit alpha source boundary; governance changes remain outside this candidate."
+  },
+  "nextRelease": {
+    "version": "0.1.0-alpha.1",
+    "status": "awaiting-prerelease-and-post-governance-boundary",
+    "auditedFromExclusive": "8e9ad45c33ad6ffb056a8b9ab465d79adf83d284",
+    "auditedThroughInclusive": "8e9ad45c33ad6ffb056a8b9ab465d79adf83d284",
+    "auditedCommitCount": 0,
+    "targetSha": null
+  },
+  "approvals": {
+    "changelogComplete": true,
+    "validationComplete": false,
+    "humanAttestationApproval": false,
+    "humanPublicSurfaceAcknowledgement": false,
+    "humanReleaseApproval": false
+  },
+  "receipts": {
+    "releaseBoundary": {
+      "pullRequests": [
+        {
+          "number": 1,
+          "url": "https://github.com/frankxai/creator-intelligence-system/pull/1",
+          "mergeCommit": "8e9ad45c33ad6ffb056a8b9ab465d79adf83d284",
+          "includedCommits": []
+        }
+      ],
+      "directCommits": [
+        {
+          "commit": "d70609c625375c8112a3dae7410e97a5653d64b9",
+          "summary": "Initial repository commit"
+        },
+        {
+          "commit": "abe55c136170669cbf6538c0faaf33e8b9516861",
+          "summary": "CIP alpha protocol, types, voice, and starter-pack foundation"
+        },
+        {
+          "commit": "6877a29090857e39fc0402553476a2d57f413b24",
+          "summary": "Clarify subscription-first CIS authoring architecture"
+        }
+      ]
+    }
+  },
+  "attestation": {
+    "status": "protocol-document-not-release-receipt",
+    "publishedAtAudit": false,
+    "clarificationPath": "ATTESTATION.md"
+  },
+  "publicSurface": {
+    "primary": {
+      "url": "https://github.com/frankxai/creator-intelligence-system",
+      "status": "repository-only"
+    },
+    "declaredHomepage": {
+      "url": "https://github.com/frankxai/GenCreator-Studio",
+      "status": "related-repository"
+    },
+    "dedicatedProductionDomain": null,
+    "verifiedAt": "2026-08-10"
+  },
+  "validation": {
+    "releaseContract": "passed-local",
+    "negativePublicationGate": "passed-blocked-unapproved-draft",
+    "jsonParse": "passed-4-files",
+    "yamlSafetyInspection": "passed-4-files",
+    "diffCheck": "passed",
+    "secretScan": "passed-no-credential-material",
+    "fullBuildClassGate": "held-by-machine-preflight",
+    "cloudCiRequired": true
+  },
+  "packagePublishing": {
+    "status": "blocked",
+    "registry": "npm",
+    "checkedAt": "2026-08-10",
+    "packages": [
+      {
+        "name": "creator-intelligence-system",
+        "registryStatus": "not-found",
+        "privateRequired": true
+      },
+      {
+        "name": "@cis/core",
+        "registryStatus": "not-found",
+        "privateRequired": true
+      },
+      {
+        "name": "@cis/voice",
+        "registryStatus": "not-found",
+        "privateRequired": true
+      }
+    ],
+    "reason": "GitHub prerelease review does not authorize registry publication."
+  }
+}

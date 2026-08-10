@@ -1,6 +1,7 @@
 {
   "name": "@cis/voice",
   "version": "0.1.0-alpha.0",
+  "private": true,
   "description": "Brand voice abstraction + audit. Single source of truth for voice config in a CIS instance.",
   "license": "MIT",
   "author": "Frank Riemer <https://frankx.ai>",

@@ -36,6 +36,7 @@
     "test": "pnpm -r --filter \"./packages/**\" test",
     "lint": "pnpm -r --filter \"./packages/**\" lint",
     "typecheck": "pnpm -r --filter \"./packages/**\" typecheck",
+    "audit:release": "python scripts/validate_release.py",
     "clean": "pnpm -r --filter \"./packages/**\" clean && rm -rf node_modules"
   },
   "devDependencies": {

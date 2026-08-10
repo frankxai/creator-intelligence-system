@@ -1,6 +1,7 @@
 {
   "name": "@cis/core",
   "version": "0.1.0-alpha.0",
+  "private": true,
   "description": "CIP types, schemas, and validators. The protocol that defines every artifact in a Creator Intelligence System.",
   "license": "MIT",
   "author": "Frank Riemer <https://frankx.ai>",
