@@ -54,6 +54,7 @@ CIS is six composable layers on a sovereign substrate. Each layer has a typed in
 Read [`ARCHITECTURE.md`](./ARCHITECTURE.md) for the layer-by-layer detail.
 Read [`SPEC.md`](./SPEC.md) for the Content Intelligence Protocol (CIP) v0.1.
 Read [`ATTESTATION.md`](./ATTESTATION.md) for the transparency moat.
+Read [`knowledge/README.md`](./knowledge/README.md) for the public-safe creator canon (YouTube Help first; guru books stay private-cold).
 
 ---
 

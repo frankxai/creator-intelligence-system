@@ -35,3 +35,6 @@ Thumbs.db
 # CIS local data
 .cis-local/
 attestations/
+
+# Canon ingest scratch — never commit source binaries/HTML
+knowledge/_raw/

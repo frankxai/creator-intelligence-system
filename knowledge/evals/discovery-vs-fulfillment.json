@@ -1,0 +1,8 @@
+{
+  "id": "eval-discovery-vs-fulfillment",
+  "domain": "creator",
+  "rule": "CTR/Reach without watch-time or traffic-source split cannot be called a creative win.",
+  "pass_example": "Search CTR rose; average view duration fell — packaging worked, fulfillment failed (cis-reach-is-discovery-not-quality).",
+  "fail_example": "We went viral so the script is good.",
+  "synthetic": true
+}
