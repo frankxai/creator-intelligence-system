@@ -117,13 +117,18 @@ export interface StrategyAdapter {
 
 **Purpose:** Brief → assets. Multi-agent, multi-modal, brand-locked.
 
+For the canonical human-led and agentic video workflow, tool routing, episode-manifest pattern, Recording Console contract, and QA gates, see [`docs/VIDEO_PRODUCTION_OS.md`](./docs/VIDEO_PRODUCTION_OS.md) and [`docs/ADR-VIDEO-RENDERER.md`](./docs/ADR-VIDEO-RENDERER.md).
+
 **Concrete tech (defaults):**
 
 - **Primary authoring:** Claude Code, Claude Project, ChatGPT Project/GPT, Cursor, or another creator-owned agent workspace. This path uses the creator's existing subscription and writes CIP artifacts back to the substrate.
 - **Hosted automation adapters:** Claude Agent SDK, raw Anthropic SDK, OpenAI SDK, or Vercel AI SDK for creators who explicitly want server-side automation and bring provider/API Gateway keys.
 - **Terminal generation:** [`vercel-labs/ai-cli`](https://github.com/vercel-labs/ai-cli) for one-off text/image/video generation via Vercel AI Gateway or provider keys. Useful adapter, not a required runtime.
 - **Image:** AI Gateway/provider adapters, or creator-local image tools, with honest MIME/type metadata preserved in CIP attestations.
-- **Video:** Remotion (peer dependency only — users install) for React-rendered video. HeyGen Hyperframes (Apache 2.0) for HTML-rendered agent-authored video.
+- **Deterministic video / motion:** **HeyGen HyperFrames (Apache 2.0) is the default for new agent-authored compositions** — diagrams, charts, captions, UI composites, kinetic type, branded motion, and repeatable templates. Remotion remains a supported compatibility/specialist adapter for mature React compositions or React-first requirements.
+- **Human A-roll / semantic edit:** Descript is the default transcript-native adapter for take selection, dead-air removal, narrative cuts, and review assembly. Treat it as a semantic timeline assembler, not the canonical design system.
+- **Generative motion / B-roll:** Higgsfield or provider-specific video adapters for cinematic generated scenes, visual metaphors, and reference-consistent inserts. Prefer real screenshots/screen recordings when the visual is evidence of something that actually exists.
+- **Fully synthetic storyboard lane:** Hypernatural is an optional adapter for faceless or synthetic-first workflows; it is not the default founder A-roll editor.
 - **Music:** Suno API (when public) or `suno-prompt-architect` skill for manual.
 - **Distribution mini-apps:** Farcaster Frames v2 via `@farcaster/frame-sdk` (MIT).
 - **Voice guard:** `@cis/voice` `auditVoice()` runs at every agent boundary. Banned phrases or quarantined terms reject the draft.
@@ -148,7 +153,7 @@ export interface ProductionStep {
 }
 ```
 
-**Cost discipline:** every hosted `produce()` call must report token counts. Subscription-workspace production records the tool and reviewer instead of pretending to know internal provider cost. The orchestrator enforces per-brief caps only for API-keyed adapters.
+**Cost discipline:** every hosted `produce()` call must report token counts. Subscription-workspace production records the tool and reviewer instead of pretending to know internal provider cost. The orchestrator enforces per-brief caps only for API-keyed adapters. Large raw media should stay behind `MediaRef`s; agents should operate on transcripts, manifests, selected frames, hashes, and asset references unless raw media inspection is materially required.
 
 ---
 
@@ -221,7 +226,7 @@ const conductor = new Conductor({
   substrate: sisSubstrate,
   capture: [whisperGroq, plasmoClipper, fileDropper],
   strategy: frontmatterStrategy,
-  production: [anthropicProducer, vercelAiProducer, remotionProducer],
+  production: [anthropicProducer, vercelAiProducer, descriptProducer, hyperframesProducer, remotionProducer, generativeVideoProducer],
   distribution: [blueskyAdapter, linkedinAdapter, beehiivAdapter],
   learning: agentDbLearner,
 })
