@@ -23,7 +23,7 @@ This skill loads the CIS protocol contract into your Claude Code session. After 
 
 ## Slash commands this skill exposes
 
-These commands are scaffolded in `starter-packs/claude-code/commands/`:
+These commands are scaffolded in `starter-packs/claude-code/skills/`:
 
 - `/cis-capture` — start a capture from voice / clip / file drop
 - `/cis-brief` — create a Brief from one or more Captures
@@ -34,7 +34,7 @@ These commands are scaffolded in `starter-packs/claude-code/commands/`:
 
 ## Companion agents
 
-These agents are scaffolded in `starter-packs/claude-code/agents/`:
+These agents are scaffolded in `starter-packs/claude-code/skills/`:
 
 - `cis-orchestrator` — the conductor; routes briefs, dispatches adapters
 - `cis-voice-guard` — runs voice audit at every L4 boundary; rejects banned/quarantined terms
