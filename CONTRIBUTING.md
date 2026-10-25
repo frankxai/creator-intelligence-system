@@ -18,7 +18,7 @@
 
 ```bash
 # 1. Scaffold
-cd packages/
+cd packages/adapters/
 cp -r _template my-adapter
 cd my-adapter
 # 2. Edit package.json, README, src/index.ts, tests/
