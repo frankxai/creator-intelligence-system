@@ -19,11 +19,11 @@ This skill loads the CIS protocol contract into your Claude Code session. After 
 2. **Use `@cis/core` types** for any new code. Never define ad-hoc shapes for `Capture`, `Brief`, `Publication`, etc.
 3. **Honor the attestation contract** — every code path that produces a publishable artifact must accumulate `AgentStep[]`, `ModelInvocation[]`, and `HumanReview[]`.
 4. **Run the voice audit** at every L4 production boundary. Use `@cis/voice` `auditVoice()`. If issues are non-empty, surface them to the user before proceeding.
-5. **Default to open OSS** — when picking a dependency, prefer MIT/Apache. Never recommend tldraw (proprietary $6k/yr); use react-flow / xyflow instead.
+5. **Default to open OSS** — when picking a dependency, prefer MIT/Apache. Never recommend tldraw (proprietary \$6k/yr); use react-flow / xyflow instead.
 
 ## Slash commands this skill exposes
 
-These commands are scaffolded in `starter-packs/claude-code/commands/`:
+These commands are scaffolded in `starter-packs/claude-code/skills/`:
 
 - `/cis-capture` — start a capture from voice / clip / file drop
 - `/cis-brief` — create a Brief from one or more Captures
@@ -34,7 +34,7 @@ These commands are scaffolded in `starter-packs/claude-code/commands/`:
 
 ## Companion agents
 
-These agents are scaffolded in `starter-packs/claude-code/agents/`:
+These agents are scaffolded in `starter-packs/claude-code/skills/`:
 
 - `cis-orchestrator` — the conductor; routes briefs, dispatches adapters
 - `cis-voice-guard` — runs voice audit at every L4 boundary; rejects banned/quarantined terms

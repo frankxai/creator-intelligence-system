@@ -132,7 +132,7 @@ creator-intelligence-system/
 |---|---|---|
 | **Use as dependency** | OSS is MIT/Apache, well-maintained, commodity | Vercel AI SDK, BlockNote, Bluesky SDK, Farcaster SDK, Anthropic SDK, Remotion (peerDep), HeyGen Hyperframes |
 | **Absorb the pattern, build clean** | The pattern is moat-critical OR upstream license is restrictive | ReasoningBank (pattern from ruflo), reflection-agent (pattern from open-canvas), agent canvas (replacing tldraw with react-flow) |
-| **Avoid** | License blocks commercial use without paid key | tldraw ($6k/yr SDK), Activepieces EE (`packages/ee/` only) |
+| **Avoid** | License blocks commercial use without paid key | tldraw (\$6k/yr SDK), Activepieces EE (`packages/ee/` only) |
 
 The core principle: **own the moat, rent the commodity.** Voice config, attestation protocol, learning loop, format library, brand-gate — these are clean-room. Editors, video frameworks, MCP transport, calendar UIs — these are dependencies.
 
