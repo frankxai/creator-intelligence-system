@@ -48,6 +48,16 @@ class MediaPackTests(unittest.TestCase):
             with open(dest/'carousel-01.svg','ab') as f: f.write(b'\n<!--tampered-->')
             self.assertTrue(any('hash mismatch' in x for x in verify(dest/'manifest.json')))
 
+    def test_pdf_reproducible_across_fresh_renders(self):
+        with tempfile.TemporaryDirectory() as d:
+            first=Path(d)/'a'
+            second=Path(d)/'b'
+            left=process(['--output',str(first),'--skip-video'])
+            right=process(['--output',str(second),'--skip-video'])
+            self.assertEqual(left['source_revision'],right['source_revision'])
+            for name in ('carousel.pdf','carousel-01.svg','wide-architecture.png'):
+                self.assertEqual((first/name).read_bytes(),(second/name).read_bytes())
+
     def test_rejects_fake_publication_and_traversal(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)

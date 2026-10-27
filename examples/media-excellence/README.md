@@ -33,3 +33,5 @@ appropriate rights has been tested. Artifact absolute paths are not public URLs.
 
 Future work: convert this reference into a reusable scene composer/editor and bind
 approved artifact records into real GenCreator/CIS DAM contracts.
+
+The PDF /ID fields are seeded from the frozen scene digest. Reproducing the same scene in the tested renderer environment yields byte-identical artifacts, including the vector carousel PDF.

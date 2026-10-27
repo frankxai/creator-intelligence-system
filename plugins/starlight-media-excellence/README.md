@@ -30,3 +30,5 @@ bytes and status constraints. Canonical GitHub source, tests, CI and `AGENTS.md`
 
 Use a reviewed pull request to adopt those templates. Copying files alone does not
 turn on hosted renders, third-party permissions or publishing.
+
+PDF document IDs are derived from the source digest; in the tested Python/FFmpeg environment, both full renders produced identical hashes for all 18 output artifacts.
