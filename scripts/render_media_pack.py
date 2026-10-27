@@ -13,6 +13,7 @@ import html
 import json
 import math
 import subprocess
+import textwrap
 from pathlib import Path
 
 CANVAS = (1080, 1350)
@@ -71,7 +72,9 @@ def composition(scene: dict, index: int, width: int = 1080,
         letters.append(text(pad, 642, beat['subline'], 31, MUTED, 400, -.5))
         letters.append(f'<path d="M{pad},739 H640" stroke="{ACCENT}" stroke-opacity=".4"/>')
     else:
-        letters.append(text(pad, 630 if tall else 518, beat['subline'], 25, MUTED, 400, -.4))
+        subtitle_lines = textwrap.wrap(beat['subline'], width=42, break_long_words=False)
+        for sub_i, subtitle in enumerate(subtitle_lines):
+            letters.append(text(pad, (610 if tall else 480) + sub_i*43, subtitle, 33, MUTED, 400, -.4))
     # Causal graph: three sources orbit one active, progressively named output.
     for ring_radius, opacity in [(radius+94,.11),(radius+38,.25),(radius,.6)]:
         letters.append(f'<circle cx="{cx}" cy="{cy}" r="{ring_radius}" fill="none" stroke="{ACCENT}" stroke-width="{2 if ring_radius == radius else 1}" opacity="{opacity}"/>')
@@ -92,12 +95,12 @@ def composition(scene: dict, index: int, width: int = 1080,
         else:
             label_x = px - (55 if i == 0 else 86)
             label_y = py + (-31 if i == 0 else 40)
-        letters.append(text(label_x, label_y, title, 25, PAPER, 500, -.4))
+        letters.append(text(label_x, label_y, title, 31, PAPER, 500, -.4))
     if wide:
         letters.append(text(pad, 890, beat['footer'], 24, MUTED, 400, -.2))
         fy = height-94
     else:
-        letters.append(text(pad, 1670 if tall else 1210, beat['footer'], 24, MUTED, 400, -.2))
+        letters.append(text(pad, 1670 if tall else 1210, beat['footer'], 31, MUTED, 400, -.2))
         fy = height-80
     letters.append(f'<path d="M{pad},{fy-47} H{width-pad}" stroke="#56737B" stroke-opacity=".45"/>')
     letters.append(text(pad, fy, "SOURCE → STORY → FORMATS → EVIDENCE", 17, ACCENT, 600, 2))
@@ -150,7 +153,11 @@ document.getElementById('prev').addEventListener('click',()=>move(-1));document.
 
 def process(argv: list[str] | None = None) -> dict:
     ap = argparse.ArgumentParser()
-    ap.add_argument('--scene', type=Path, default=Path(__file__).resolve().parents[1]/'examples/media-excellence/scene.json')
+    root = Path(__file__).resolve().parents[1]
+    default_scene = root/'examples/media-excellence/scene.json'
+    if not default_scene.exists():
+        default_scene = root/'assets/reference/scene.json'
+    ap.add_argument('--scene', type=Path, default=default_scene)
     ap.add_argument('--output', type=Path, required=True)
     ap.add_argument('--skip-video', action='store_true')
     args = ap.parse_args(argv)

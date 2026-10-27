@@ -25,8 +25,8 @@ Explicit plugin invocation or a matched skill may activate a relevant route. No 
 
 `scripts/render_media_pack.py` implements the four-beat conceptual media exercise in
 `assets/reference/scene.json`; `scripts/verify_media_manifest.py` validates artifact
-bytes and status constraints. `assets/cis-repo-integration/` provides versioned
-source templates for CIS GitHub tasks and CI adoption, not an installed hook.
+bytes and status constraints. Canonical GitHub source, tests, CI and `AGENTS.md` live in
+`frankxai/creator-intelligence-system` instead of duplicating repository files inside the plugin.
 
 Use a reviewed pull request to adopt those templates. Copying files alone does not
 turn on hosted renders, third-party permissions or publishing.
