@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Starlight Media Excellence">
+  <rect width="256" height="256" rx="48" fill="#0A1520"/>
+  <circle cx="128" cy="128" r="73" fill="none" stroke="#91DFD5" stroke-width="2" stroke-opacity=".42"/>
+  <circle cx="128" cy="128" r="49" fill="#12353D" stroke="#91DFD5" stroke-width="2"/>
+  <path d="M128 80V176M80 128H176" stroke="#91DFD5" stroke-width="1.8" stroke-opacity=".7"/>
+  <path d="M128 96L136 120L160 128L136 136L128 160L120 136L96 128L120 120Z" fill="#F2F0E9"/>
+  <circle cx="128" cy="128" r="8" fill="#EDAD7A"/>
+</svg>
