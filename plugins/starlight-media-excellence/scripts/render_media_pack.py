@@ -184,7 +184,11 @@ def process(argv: list[str] | None = None) -> dict:
         merged.insert_pdf(doc)
         doc.close()
     pdf=out/'carousel.pdf'
-    merged.save(str(pdf),garbage=4,deflate=True)
+    # PyMuPDF otherwise emits random PDF trailer IDs even for identical pages.
+    # Seed both IDs from the frozen scene so repeated renders are byte-identical.
+    source_digest = hashlib.sha256(scene_path.read_bytes()).hexdigest().upper()
+    merged.xref_set_key(-1, 'ID', f'[<{source_digest[:32]}> <{source_digest[32:64]}>]')
+    merged.save(str(pdf),garbage=4,deflate=True,no_new_id=True)
     merged.close()
     artifacts.append(pdf)
     wide=out/'wide-architecture.svg'
