@@ -1,0 +1,33 @@
+{
+  "interface": {
+    "displayName": "Starlight Media Excellence",
+    "shortDescription": "Premium media production OS",
+    "longDescription": "Direct, produce, review and hand off evidence-backed demonstrations, animated infographics, screenshots, carousels, social videos and DAM-ready media with exact release receipts. This is a skills-only production contract; tools and execution depend on the active host. Includes an inspectable, locally renderable reference pack and negative integrity fixtures.",
+    "developerName": "Frank Riemer",
+    "category": "Productivity",
+    "capabilities": [],
+    "logo": "./assets/icon.svg",
+    "composerIcon": "./assets/icon.svg",
+    "defaultPrompt": [
+      "Turn this real product flow into a premium media pack with evidence and final QA.",
+      "Critique this video, infographic or carousel for premium release quality.",
+      "Continue a media campaign from its artifact handoff and identify the next verified gate."
+    ]
+  },
+  "name": "starlight-media-excellence",
+  "version": "0.2.0",
+  "description": "Evidence-led production, independent critique, durable handoffs and release discipline for cross-format premium media. Skills only; no autonomous server or publishing permissions.",
+  "author": {
+    "name": "Frank Riemer"
+  },
+  "keywords": [
+    "media production",
+    "creative direction",
+    "DAM",
+    "LinkedIn carousel",
+    "motion graphics",
+    "quality assurance"
+  ],
+  "repository": "https://github.com/frankxai/creator-intelligence-system",
+  "skills": "./skills"
+}
