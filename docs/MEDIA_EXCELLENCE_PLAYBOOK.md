@@ -10,7 +10,7 @@ This document extends `docs/VIDEO_PRODUCTION_OS.md`. It must not supersede the v
 | --- | --- | --- |
 | New demo, explainer, carousel, animated infographic, social media conversion of live UI | `media-director` | evidence inventory, story, scene/master, real derivatives or unrendered specification, manifest |
 | Existing output to inspect, polish or release | `media-release-critic` | exact output QA, three repairs at most, PASS/FAIL_FIXABLE/HOLD |
-| Continue across chats/agents; audit DAM, publication or hooks | `media-continuity` | source-retrieved status, handoff, one next gate |
+| Find/reuse owned images or characters; inspect catalog coverage; continue across chats/agents | `media-continuity` | selected source/version references, coverage, handoff, one next gate |
 
 In ChatGPT these skills are supplied by a private, portable, skills-only plugin. In repository agents, use `AGENTS.md` and the checked-in skill source. Neither activation method grants a runtime worker or a publisher token. Future sessions must retrieve the latest authoritative facts, rather than rely on an unversioned conversational summary.
 
@@ -34,7 +34,7 @@ flowchart LR
 
 - GitHub holds executable scenes, render recipes, skill code, tests and manifests; store versioned text/source, not large video binaries.
 - Google Drive holds raw creator ingress, working video masters and portable handoff folders.
-- R2 + Supabase is the **proposed** machine-serving asset graph. Establish actual buckets, tables, retention, RLS and signed URL policy before claiming deployed DAM. Use hashes to link approved masters and renditions; do not duplicate native editor state.
+- Accepted portfolio decision `architecture_media_fabric_v3` (2026-10-22, agentic-ops) chooses R2 for canonical binary media and Supabase for hosted metadata/provenance/approval state. Verify actual buckets, catalog coverage, retention, RLS and authorized preview access before claiming a deployed DAM. Use the existing VIS identities and hashes; do not duplicate native editor state or infer an end-to-end integration from the accepted policy alone.
 - Notion holds campaign strategy and the founder-facing review queue. GenCreator becomes the edition/release state authority only after an implemented, verified migration. Avoid dual approval authority.
 - Cloudflare Images / Stream and website CMS consume DAM references through adapters; content publishing and publication receipts are separate.
 - Starlight Plugin Forge owns portable plugin packaging and verification; official Plugin Creator holds private account releases. Neither is a production orchestrator.

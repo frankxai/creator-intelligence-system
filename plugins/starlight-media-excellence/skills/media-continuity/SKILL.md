@@ -1,11 +1,27 @@
 ---
 name: media-continuity
-description: Use to resume or hand off an existing media campaign, content production project, render run, DAM ingestion, GitHub skill/plugin implementation or cross-chat creative task, including requests for automatic hooks or making future agents follow a playbook.
+description: Use to find and reuse owned images, visual references, characters or media across accessible catalogs; audit DAM search coverage; resume a campaign, render or asset handoff across chats; explain missing connections and future-chat activation.
 ---
 
 # Cross-chat Continuity and Handoff
 
 Never treat the conversation transcript as the complete durable source of truth. Search relevant authorized GitHub, Notion, Drive, asset registry and deployment data; fetch exact artifacts and citations before claiming current status. Respect tenant, brand and audience boundaries.
+
+
+## Find existing assets before production
+
+1. Resolve the creator/workspace, brand, character and intended placement from the request. Discover the actual connected catalogs and their coverage. Load the current accepted storage policy when available; a connector's availability does not make it the asset authority.
+2. Prefer a verified workspace-scoped VIS/GenCreator catalog tool when exposed. Use search_assets, get_asset and get_asset_preview only when their actual schemas are available. Otherwise use the authorized host file/provider tools. Recent chat-generated files may remain in ChatGPT Library; an R2 bucket, Cloudinary library, Supabase catalog and local VIS index cover different subsets. Do not invent a universal generation/export hook or assume access to another user's files.
+3. Search identifiers and collection metadata first. Use caption/text search or visual similarity only when supported, and name which method ran. Preserve source, asset, version and character IDs. Show at most six useful candidates and retrieve previews only for selected candidates. A similar-looking character is not established canon.
+4. Report each relevant source as searched, unavailable or not configured, with observed freshness when provided. Empty results from one source are not global absence. Distinguish catalog records, retrieved files, unique content hashes, rights, asset-level approval and exact-version approval. Do not inherit approval onto a changed version.
+5. Return the selected references, original proportions, source links and known gaps. Preserve the user's requested composition/aspect ratio unless they request a change. Only report ingestion, upload or saved review decisions with observed receipts. Follow media-director for production and media-release-critic for release review.
+
+### Acceptance examples
+
+- Find our copper fox: retrieve its established identity and versions from accessible sources; inspect candidates rather than inventing a new fox.
+- Cloudinary returned zero, Library has the reference: use the retrieved reference and report Cloudinary's coverage boundary.
+- Another workspace's asset ID is supplied: use only authorized workspace tools; do not ask an operator connector to bypass the denial.
+- A new account has no catalog: explain the empty/configuration state and use a selected supplied reference; never fall back to the founder's private collection.
 
 ## On every relevant new production task
 

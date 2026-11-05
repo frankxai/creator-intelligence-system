@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "starlight.data-use.v1",
+  "capability": "starlight-media-excellence",
+  "state": "declared",
+  "declaration": {
+    "purpose": "Evidence-led production, independent critique, durable handoffs and release discipline for cross-format premium media. Skills only; no autonomous server or publishing permissions.",
+    "personalData": "unknown",
+    "storage": "unknown",
+    "retentionDays": null,
+    "processingRegions": [],
+    "exportMode": "unknown",
+    "deletionMode": "unknown",
+    "externalActions": "unknown"
+  },
+  "review": {
+    "state": "required",
+    "unresolved": [
+      "personalData",
+      "storage",
+      "retentionDays",
+      "processingRegions",
+      "exportMode",
+      "deletionMode",
+      "externalActions"
+    ],
+    "legalComplianceVerified": false,
+    "runtimeEnforced": false,
+    "permissionsGranted": false,
+    "releaseApproved": false
+  }
+}
