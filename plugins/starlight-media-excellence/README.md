@@ -6,14 +6,14 @@ A portable, private **skills-only** plugin. It does not contain credentials, sch
 
 - The canonical cross-format architecture is `frankxai/creator-intelligence-system` and `docs/VIDEO_PRODUCTION_OS.md`.
 - GenCreator Studio owns creation, recording, review and edition UX.
-- Notion owns current campaign/approval projection; Google Drive owns raw working ingest; proposed R2 + Supabase DAM remains unverified until deployed.
+- The accepted portfolio media policy is architecture_media_fabric_v3 in agentic-ops: R2 owns canonical binary media, Supabase owns metadata/approval records, Vercel handles web image delivery, and Drive holds human working files. Verify actual catalog connections and ingestion per session; the accepted architecture does not prove an end-to-end deployed DAM.
 - Starlight Plugin Forge verifies packaging/installation. Official Plugin Creator saves this plugin; neither grants source access or makes an always-on worker.
 
 ## Route
 
 - **media-director**: new or materially revised creative package, demo, carousel, animation, social campaign.
 - **media-release-critic**: final or candidate visual, video, motion or copy review.
-- **media-continuity**: resume a past production, package work for another session/agent, or inspect missing receipts.
+- **media-continuity**: find and reuse existing images/characters, inspect source coverage, resume a production or prepare an asset handoff.
 
 Explicit plugin invocation or a matched skill may activate a relevant route. No plugin can promise universal automatic invocation in every chat. For agent-code repositories, copy the companion `AGENTS.md` instructions under the owning repo and keep native runtime jobs separate.
 
