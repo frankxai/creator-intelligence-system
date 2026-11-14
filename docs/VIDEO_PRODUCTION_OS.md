@@ -5,6 +5,8 @@
 
 This document defines the default video-production architecture for FrankX / GenCreator and any CIS implementation that wants high-quality human-led short-form or long-form video without building a traditional editing team.
 
+Controlled route experiments use the [Cinematic Production Benchmark Lab](CINEMATIC_BENCHMARK_LAB.md). A benchmark does not silently change this document's accepted production defaults.
+
 ## 1. Decision
 
 The production system is **manifest-first, visual-first, and agent-orchestrated**.
